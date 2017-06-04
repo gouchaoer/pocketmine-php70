@@ -7,3 +7,5 @@ A green php70 binary, only for php-cli usage.
 4. php-cli is on `/pocketmine/bin/php7/bin/php`
 
 This binary is pruned from `https://bintray.com/pocketmine/PocketMine/Unix-PHP-Binaries/view#files`, so you can custom your own green php binary upon pocketmine build shell `https://github.com/PocketMine/php-build-scripts/blob/master/compile.sh`.
+
+If you meet `/pocketmine/bin/php7/bin/php: error while loading shared libraries: libltdl.so.7: cannot open shared object file: No such file or directory` in centos, just `yum install libtool-ltdl`
