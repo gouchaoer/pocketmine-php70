@@ -1,5 +1,5 @@
 #!/bin/bash
-/pocketmine/bin/php7/bin/php -v > /dev/null
+/pocketmine/bin/php7/bin/php -v > /dev/null 2>&1
 if [ $? -ne 0 ];then
     echo "install pocketmine-php70"
     rm -rf /pocketmine
@@ -7,7 +7,7 @@ if [ $? -ne 0 ];then
     wget https://coding.net/u/qsalg/p/pocketmine-php70/git/raw/master/pocketmine-php70-64.tar.gz -P /pocketmine
     tar -zxvf /pocketmine/pocketmine-php70-64.tar.gz -C /pocketmine/
  
-    libltdl=`/pocketmine/bin/php7/bin/php -v |grep "libltdl"`
+    libltdl=`/pocketmine/bin/php7/bin/php -v 2>&1 |grep "libltdl"`
     if [ -n "$libltdl" ];then
         lsb=`lsb_release -i |grep "CentOS"`
         if [ -n "$lsb" ];then
@@ -20,7 +20,7 @@ if [ $? -ne 0 ];then
     fi
 fi
 
-/pocketmine/bin/php7/bin/php -v > /dev/null
+/pocketmine/bin/php7/bin/php -v > /dev/null 2>&1
 if [ $? -ne 0 ];then
     echo "install pocketmine-php70 failed, exit"
     exit
