@@ -1,3 +1,4 @@
+#!/bin/bash
 /pocketmine/bin/php7/bin/php -v > /dev/null
 if [ $? -ne 0 ];then
     echo "install pocketmine-php70"
