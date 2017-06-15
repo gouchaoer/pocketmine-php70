@@ -3,12 +3,13 @@ if [ $? -ne 0 ];then
     echo "install pocketmine-php70"
     rm -rf /pocketmine
     sudo mkdir /pocketmine
-    wget https://github.com/gouchaoer/pocketmine-php70/raw/master/pocketmine-php70-64.tar.gz -P /pocketmine
+    wget https://coding.net/u/qsalg/p/pocketmine-php70/git/raw/master/pocketmine-php70-64.tar.gz -P /pocketmine
     tar -zxvf /pocketmine/pocketmine-php70-64.tar.gz -C /pocketmine/
+ 
     libltdl=`/pocketmine/bin/php7/bin/php -v |grep "libltdl"`
-    if [ -z "$libltdl" ];then
+    if [ -n "$libltdl" ];then
         lsb=`lsb_release -i |grep "CentOS"`
-        if [ -z "$lsb" ];then
+        if [ -n "$lsb" ];then
              echo "install libltdl"
              yum -y install libtool-ltdl
          else
