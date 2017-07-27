@@ -22,22 +22,17 @@ if [ $? -ne 0 ];then
              exit
          fi
     fi
-fi
 
-/pocketmine/bin/php7/bin/php -v > /dev/null 2>&1
-if [ $? -ne 0 ];then
-    echo "install pocketmine-php70 failed, exit"
-    exit
+    /pocketmine/bin/php7/bin/php -v > /dev/null 2>&1
+    if [ $? -ne 0 ];then
+        echo "install pocketmine-php70 failed, exit"
+        exit
+    fi
 fi
 
 #php script
 /pocketmine/bin/php7/bin/php<<'PHPSCRIPT'
-
 <?php
-//echo $j;
-$o=null;
-$r=null;
-exec("ls -alh", $o, $r);
-var_dump($o);var_dump($r);
+echo "pocketmine php version:" . phpversion() . PHP_EOL;
 
 PHPSCRIPT
