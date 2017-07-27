@@ -1,5 +1,5 @@
 # pocketmine-php70
-A green php70 binary, only for php-cli usage.  
+A green php70 binary, only for php-cli usage. Only tested on CentOS7.x and Ubuntu16.04.
 
 1. `sudo mkdir /pocketmine`
 2. `wget https://github.com/gouchaoer/pocketmine-php70/raw/master/pocketmine-php70-64.tar.gz -P /pocketmine`
